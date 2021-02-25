@@ -1,0 +1,22 @@
+<p>listado de Héroes</p>
+
+<!--ngIf es un condicional-->
+<div *ngIf="borrado!==''; else noBorrar">
+
+    <h3>Heroe Borrado: <small>{{borrado}}</small></h3>
+</div>
+
+<!--ng-template con la almohadilla indicamos el else a ejecutar-->
+<ng-template #noBorrar>
+    <h3>No has borrado nada.</h3>
+</ng-template>
+
+    <button (click)="borrarHeroe()">
+        Borrar
+    </button>
+
+<ul>    <!--ngfor es como un for/ lee los arrays-->
+    <li *ngFor="let heroe of heroes; let i= index">
+       {{i }}-{{heroe}}
+    </li>
+</ul>
